@@ -1,69 +1,111 @@
-class Juego:
-    def __init__ (self,pi,pa,ti):
-        self.pi = pi
-        self.pa = pa
-        self.ti = ti
+import random
 
-        if jugador1== pa and jugador2 == pi:
-            print ('Papel envuelve a Piedra, gana Papel')
-        elif jugador1== pa and jugador2 == pa:
-            print ('Papel es igual a Papel, nadie gana')
-        elif jugador1==pa and jugador2== ti:
-            print ('Papel es cortado por Tijera, gana Tijera')
-        elif jugador1== pi and jugador2== pi:
-            print ('Piedra es igual a Piedra, nadie gana')
-        elif jugador1== pi and jugador2== ti:
-            print ('Piedra destruye Tijera, gana Piedra')
-        elif jugador1== pi and jugador2== pa:
-            print ('Piedra es envuelto por Papel, gana Papel')
-        elif jugador1== ti and jugador2 == ti:
-            print ('Tijera es igual a Tijera, nadie gana')
-        elif jugador1==ti and jugador2 == pa:
-            print ('Tijera corta Papel, gana Tijera')
-        elif jugador1==ti and jugador2== pi:
-            print ('Tijera es destruida por Piedra, gana Piedra')
+def inicio():
+    print(""" 
+    _____________________________
+    Iniciemos:
+    _____________________________
 
-class Jugando:
-    def __init__ (self,jugador1, jugadorjugador2):
-        self.jugador1 = jugador1
-        self.jugadorjugador2 = jugadorjugador2
+    El Jugador1 debe de capturar:
+    0 para elegir Piedra
+    1 para elegir Papel y
+    2 para elegir Tijera,
+            
+    Depues le tocara al Jugador2 o a la PC capturar una opción y
+    Por último se deplegara al ganador""")
 
-def iniciar():
-    print("_____________________________________________")
-    print("Bienvenido al juego de Piedra, Papel o Tijera")
-    print("_____________________________________________")
-    print()
-    print("Elige contra quien jugar:")
-    print("1. jugar vs la computadora")
-    print("2. jugar vs otro participante")
-    print("0. Salir")
-    print()
+def opcion1():
+    print (inicio())
+    entradajug1 = int(input("Jugador1 selecciona la opción >>> "))
+    if entradajug1 in range(3):
+        if entradajug1 == 0:
+            print("Jugador 1 eligio Piedra")
+        elif entradajug1 == 1:
+            print("Jugador 1 eligio Papel")
+        elif entradajug1 == 2:
+            print("Jugador 1 eligio Tijera")
+    else:
+        print('La opción del jugador 1 no es valida')
+    
+    pc = random.randrange(0,2)
+    if pc == 0:
+        print("PC eligio Piedra")
+    elif pc == 1:
+        print("PC eligio Papel")
+    elif pc == 2:
+        print("PC eligio Tijera")
 
+
+
+
+def opcion2():
+    print (inicio())
+    entradajug1 = int(input("Jugador 1 selecciona la opcion >>> "))
+    if entradajug1 in range(3):
+        if entradajug1 == 0:
+            print("Jugador 1 eligio Piedra")
+        elif entradajug1 == 1:
+            print("Jugador 1 eligio Papel")
+        elif entradajug1 == 2:
+            print("Jugador 1 eligio Tijera")
+    else:
+        print('La opción del jugador 1 no es valida')
+    
+    entradajug2 = int(input("Jugador 2 selecciona la opcion >>> "))
+    if entradajug2 in range(3):
+        if entradajug2 == 0:
+            print("Jugador 2 eligio Piedra")
+        elif entradajug2 == 1:
+            print("Jugador 2 eligio Papel")
+        elif entradajug2 == 2:
+            print("Jugador 2 eligio Tijera")
+    class Respuesta:
+        def __init__(self,jug1,jug2):
+            self.jug1 = jug1
+            self.jug2 = jug2
+
+            jug1 = entradajug1
+            jug2 = entradajug2
+            for i in Respuesta():
+                if jug1 == 1 and jug2 == 0:
+                    print ('Papel envuelve a Piedra, gana Papel')
+                elif jug1 == 1 and jug2 == 1:
+                    print ('Papel es igual a Papel, nadie gana')
+                elif jug1 ==1 and jug2== 2:
+                    print ('Papel es cortado por Tijera, gana Tijera')
+                elif jug1 == 0 and jug2== 0:
+                    print ('Piedra es igual a Piedra, nadie gana')
+                elif jug1 == 0 and jug2== 2:
+                    print ('Piedra destruye Tijera, gana Piedra')
+                elif jug1 == 0 and jug2== 1:
+                    print ('Piedra es envuelto por Papel, gana Papel')
+                elif jug1 == 2 and jug2 == 2:
+                    print ('Tijera es igual a Tijera, nadie gana')
+                elif jug1 ==2 and jug2 == 1:
+                    print ('Tijera corta Papel, gana Tijera')
+                elif jug1 ==2 and jug2== 0:
+                    print ('Tijera es destruida por Piedra, gana Piedra')
 
 def intro():
-    while True:
-        iniciar()
-        try:
-            entrada_usuario = int(input("Seleccione una opcion: "))
-            if entrada_usuario in range(3):
-                if entrada_usuario == 0:
-                    print("Adios! Vuelva pronto")
-                    break
-                    print()
-                elif entrada_usuario == 1:
-                    print("Usted eligió la opcion {} !\n".format(entrada_usuario))
-                    break
-                elif entrada_usuario == 2:
-                    print(""" Iniciemos:
-                    El Jugador1 debe de capturar:
-                    1 para elegir Piedra
-                    2 para elegir Papel y
-                    3 para elegir Tijera,
-                    Depues le tocara al jugador2 y
-                    por último se deplegara al ganador""")
-            else:
-                print('Error, solo de aceptan numeros del 0 al jugador2')
-        except ValueError:
-            print("Error, ingrese solamente numeros")
-                
-print(intro())
+    print ("""
+    _____________________________________________
+    Bienvenido al juego de Piedra, Papel o Tijera
+    _____________________________________________
+
+    Elige una opción:
+    1. jugar vs la computadora
+    2. jugar vs otro participante
+    0. Salir
+    """)
+
+    entrada_usuario = int(input("Seleccione una opcion: "))
+    if entrada_usuario in range(3):
+        if entrada_usuario == 0:
+            print("Adios! Vuelva pronto")
+        elif entrada_usuario == 1:
+            print (opcion1())
+        elif entrada_usuario == 2:
+            print (opcion2())
+            
+
+print (intro())
