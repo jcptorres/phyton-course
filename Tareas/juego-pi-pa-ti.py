@@ -27,7 +27,7 @@ def opcion1():
     else:
         print('La opción del jugador 1 no es valida')
     
-    pc = random.randrange(0,2)
+    pc = random.randrange(0,3)
     if pc == 0:
         print("PC eligio Piedra")
     elif pc == 1:
@@ -35,7 +35,24 @@ def opcion1():
     elif pc == 2:
         print("PC eligio Tijera")
 
-
+    if entradajug1 == 1 and pc == 0:
+            print ('Papel envuelve a Piedra, gana Papel')
+    elif entradajug1 == 1 and pc == 1:
+            print ('Papel es igual a Papel, nadie gana')
+    elif entradajug1 ==1 and pc == 2:
+            print ('Papel es cortado por Tijera, gana Tijera')
+    elif entradajug1 == 0 and pc == 0:
+            print ('Piedra es igual a Piedra, nadie gana')
+    elif entradajug1 == 0 and pc == 2:
+            print ('Piedra destruye Tijera, gana Piedra')
+    elif entradajug1 == 0 and pc == 1:
+            print ('Piedra es envuelto por Papel, gana Papel')
+    elif entradajug1 == 2 and pc == 2:
+            print ('Tijera es igual a Tijera, nadie gana')
+    elif entradajug1 ==2 and pc == 1:
+            print ('Tijera corta Papel, gana Tijera')
+    elif entradajug1 ==2 and pc== 0:
+            print ('Tijera es destruida por Piedra, gana Piedra')
 
 
 def opcion2():
@@ -59,32 +76,25 @@ def opcion2():
             print("Jugador 2 eligio Papel")
         elif entradajug2 == 2:
             print("Jugador 2 eligio Tijera")
-    class Respuesta:
-        def __init__(self,jug1,jug2):
-            self.jug1 = jug1
-            self.jug2 = jug2
 
-            jug1 = entradajug1
-            jug2 = entradajug2
-            for i in Respuesta():
-                if jug1 == 1 and jug2 == 0:
-                    print ('Papel envuelve a Piedra, gana Papel')
-                elif jug1 == 1 and jug2 == 1:
-                    print ('Papel es igual a Papel, nadie gana')
-                elif jug1 ==1 and jug2== 2:
-                    print ('Papel es cortado por Tijera, gana Tijera')
-                elif jug1 == 0 and jug2== 0:
-                    print ('Piedra es igual a Piedra, nadie gana')
-                elif jug1 == 0 and jug2== 2:
-                    print ('Piedra destruye Tijera, gana Piedra')
-                elif jug1 == 0 and jug2== 1:
-                    print ('Piedra es envuelto por Papel, gana Papel')
-                elif jug1 == 2 and jug2 == 2:
-                    print ('Tijera es igual a Tijera, nadie gana')
-                elif jug1 ==2 and jug2 == 1:
-                    print ('Tijera corta Papel, gana Tijera')
-                elif jug1 ==2 and jug2== 0:
-                    print ('Tijera es destruida por Piedra, gana Piedra')
+    if entradajug1 == 1 and entradajug2 == 0:
+            print ('Papel envuelve a Piedra, gana Papel')
+    elif entradajug1 == 1 and entradajug2 == 1:
+            print ('Papel es igual a Papel, nadie gana')
+    elif entradajug1 ==1 and entradajug2 == 2:
+            print ('Papel es cortado por Tijera, gana Tijera')
+    elif entradajug1 == 0 and entradajug2 == 0:
+            print ('Piedra es igual a Piedra, nadie gana')
+    elif entradajug1 == 0 and entradajug2 == 2:
+            print ('Piedra destruye Tijera, gana Piedra')
+    elif entradajug1 == 0 and entradajug2 == 1:
+            print ('Piedra es envuelto por Papel, gana Papel')
+    elif entradajug1 == 2 and entradajug2 == 2:
+            print ('Tijera es igual a Tijera, nadie gana')
+    elif entradajug1 ==2 and entradajug2 == 1:
+            print ('Tijera corta Papel, gana Tijera')
+    elif entradajug1 ==2 and entradajug2== 0:
+            print ('Tijera es destruida por Piedra, gana Piedra')
 
 def intro():
     print ("""
