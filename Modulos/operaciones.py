@@ -1,4 +1,7 @@
-from suma import suma
+import suma
+import resta
+import multiplicacion
+import division
 
 
 print("\n")
@@ -14,19 +17,19 @@ while True:
     if opcion == 1:
         suma.operador1
         suma.operador2
-        print (suma())
+        print (suma.suma())
     elif opcion == 2:
-        resta.operador1
-        resta.operador2
-        resta.resta()
+        suma.operador1
+        suma.operador2
+        print (resta.resta())
     elif opcion == 3:
         suma.operador1
         suma.operador2
-        multiplicacion.multiplicar()
+        print (multiplicacion.multiplicar())
     elif opcion == 4:
         suma.operador1
         suma.operador2
-        division.dividir()
+        print (division.division())
     elif opcion == 5:
         break
     else:
